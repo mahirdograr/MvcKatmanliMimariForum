@@ -1,5 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +14,7 @@ namespace DotNetMvc.Controllers
     public class CategoryController : Controller
     {
         //BusinessLayer'dan CategoryManageri çağırıyoruz
-        CategoryManager cm = new CategoryManager();
+        CategoryManager cm = new CategoryManager(new EfCategoryDal());
 
         // GET: Category
         public ActionResult Index()
@@ -22,7 +25,7 @@ namespace DotNetMvc.Controllers
 
         public ActionResult GetCategoryList()
         {
-            var categoryvalues = cm.GetAllBL();
+            var categoryvalues = cm.GetList();
             //Gelen verileriView gönderiyoruz
             return View(categoryvalues);
         }
@@ -36,8 +39,28 @@ namespace DotNetMvc.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category p)
         {
-            cm.CategoryAddBL(p);
-            return RedirectToAction("GetCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult results = categoryValidator.Validate(p);
+            //Geçerliliğini kontrol ediyor validate
+            if (results.IsValid)
+            {
+                cm.CategoryAdd(p);
+                return RedirectToAction("GetCategoryList");
+
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+
+            return View();
+
+
+
         }
 
     }
