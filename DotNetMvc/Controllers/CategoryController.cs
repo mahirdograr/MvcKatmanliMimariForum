@@ -46,7 +46,6 @@ namespace DotNetMvc.Controllers
             {
                 cm.CategoryAdd(p);
                 return RedirectToAction("GetCategoryList");
-
             }
             else
             {
