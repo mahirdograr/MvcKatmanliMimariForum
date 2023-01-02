@@ -28,9 +28,9 @@ namespace BusinessLayer.Concrete
             return _headingdal.List();
         }
 
-        public List<Heading> GetListByWriter()
+        public List<Heading> GetListByWriter(int id)
         {
-            return _headingdal.List(x => x.WriterID == 4);
+            return _headingdal.List(x => x.WriterID == id);
         }
 
         public void HeadingAdd(Heading heading)
