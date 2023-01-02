@@ -60,15 +60,15 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                            <li class="nav-item has-treeview ">
-                                <a href="/AdminCategory/Index/" class="nav-link ">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                                    <p>
-                                        Profilim
-                                    </p>
-                                </a>
-                            </li>
+    with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview ">
+                            <a href="/WriterPanel/WriterProfile/" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Profilim
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="/WriterPanel/MyHeading/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -78,9 +78,15 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                        
-                        
-                        
+                        <li class="nav-item">
+                            <a href="/WriterPanel/AllHeading/" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Tüm Başlıklar
+                                    @*<span class="right badge badge-danger">New</span>*@
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="/WriterPanelMessage/Inbox/" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -90,7 +96,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/WriterPanelContent/MyContent/" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Yazılarım
@@ -99,7 +105,7 @@ to get the desired effect
 
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Default/Heading" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Siteye Git
@@ -108,7 +114,7 @@ to get the desired effect
 
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Login/LogOut/" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Çıkış Yap
@@ -139,7 +145,7 @@ to get the desired effect
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    @*<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>*@
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
