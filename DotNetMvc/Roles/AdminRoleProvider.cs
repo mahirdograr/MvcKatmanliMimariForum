@@ -40,7 +40,14 @@ namespace DotNetMvc.Roles
         {
             Context c = new Context();
             var x = c.Admins.FirstOrDefault(y => y.AdminUserName == username);
-            return new string[] { x.AdminRole };
+            if (x == null) {
+                return new string[] { "B" };
+
+            }
+            else
+            {
+                return new string[] { x.AdminRole };
+            }
             // sisteme giriş yapan kişinin rolünü taşıyacak
         }
 
