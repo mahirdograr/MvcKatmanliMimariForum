@@ -43,7 +43,7 @@ namespace DotNetMvc.Controllers
             {
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 mm.MessageAdd(p);
-                return RedirectToAction("Sendbox");
+                return RedirectToAction("Home","HomePage");
 
             }
             else

@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+@{
+    ViewBag.Title = "GetAllContent";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+
+<h2>GetAllContent</h2>
+@using(Html.BeginForm("GetAllContent","Content",FormMethod.Post))
+            {
+                <p>
+                    Aranacak kelimeyi Giriniz: @Html.TextBox("p")
+                    <input type="submit" value="Ara" class="btn btn-primary" />
+                </p>
+            }
+<div class="timeline">
+
+    <!-- timeline time label -->
+    @foreach (var item in Model)
+    {
+
+        <p>@item.ContentValue</p>
+        <!-- END timeline item -->
+    }
+</div>

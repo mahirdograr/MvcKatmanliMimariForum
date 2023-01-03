@@ -23,9 +23,17 @@ namespace BusinessLayer.Concrete
             return _contentdal.Get(x => x.HeadingID == id);
         }
 
-        public List<Content> GetList()
+        public List<Content> GetList(string p)
         {
-            return _contentdal.List();
+            if (p == null)
+            {
+                return _contentdal.List();
+            }
+            else
+            {
+                return _contentdal.List(x => x.ContentValue.Contains(p));
+
+            }
         }
 
         public void ContentAdd(Content content)
